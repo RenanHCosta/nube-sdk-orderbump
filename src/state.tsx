@@ -69,6 +69,7 @@ export function updateSelectedVariant(productId: number, variantId: number) {
 
 export function handleAddToCart(variantId: number) {
 	console.log("Adding to cart:", variantId);
+	// breaks, why?
 }
 
 export function onPreviousPage() {

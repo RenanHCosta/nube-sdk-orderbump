@@ -36,13 +36,13 @@ export const ProductItemComponent = ({
 	const allAttrs = product.variants.reduce(
 		(acc, item) => {
 			const itemAttrs = JSON.parse(item.attributes || "[]");
-			itemAttrs.forEach((attr: { [key: string]: string }) => {
+			for (const attr of itemAttrs) {
 				if (
 					!acc.some((a: { [key: string]: string }) => a[lang] === attr[lang])
 				) {
 					acc.push(attr);
 				}
-			});
+			}
 			return acc;
 		},
 		[] as { [key: string]: string }[],
